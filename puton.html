@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital watch</title>
+</head>
+<body>
+    <div class="hours" >00 </div>
+    <div class="min">   00</div>
+    <div class="sec">  00 </div>
+</body>
+<script>
+    now=new Date()
+    function time() {
+        hours=String(now.getHours()).padStart(2,'0');
+        document.querySelector('.hours').textContent=hours;
+    }
+    setInterval(time,1000);
+    time();
+   
+</script>
+</html>
