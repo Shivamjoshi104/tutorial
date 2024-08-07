@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qr code generator</title>
+    <style>
+        .mainn{
+            display: block;
+            justify-content: center;
+            margin-left: 30%;
+            margin-top:10% ;
+            border: 2px solid black;
+            border-radius: 20px;
+            width: 30%;
+            height: 50vh;
+        }
+        h1{
+            margin-left: 30px;
+            width: 300px;
+        }
+        input{
+            height: 5vh;
+            margin-left: 40px;
+            width: 250px;
+        }
+        .button{
+            margin-top: 20px;
+            background-color: blue;
+            height: 5vh;
+            margin-left: 110px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="mainn">
+        <h1>QR Code Generator</h1>
+        <input id="qrtext" type="text"> <br>
+        <div id="imgbox">
+            <img src="" id="qrimage" alt="logjh">
+
+        </div>
+        
+        <button onclick="generateqr()" class="button">Generate OR</button>
+    </div>
+ 
+
+
+</body>
+<script>
+    let imgbox=document.getElementById("imgbox") 
+    let qrimage=document.getElementById("qrimage")
+    let qrtext=document.getElementById("qrtext")
+    function generateqr(){
+        qrimage.src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+ qrtext.value;
+    }
+</script>
+</html>
